@@ -1,3 +1,4 @@
+#modified from https://github.com/piuccio/cowsay/blob/master/cows/whale.cow
 $the_cow = <<EOC;
         $thoughts $thoughts $thoughts
       $thoughts   $thoughts   $thoughts
