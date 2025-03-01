@@ -42,7 +42,7 @@ void capitalize(char ** word) {
 }
 
 void pattern() {
-    int option = rand() % 10 + 1;
+    int option = rand() % 11 + 1;
     switch (option) {
         case 1:
             printf("%s %s %s the %s %s.\n", greeting(), introduction(), verb(0), object(), prepPlace(0));
@@ -54,7 +54,7 @@ void pattern() {
             printf("%s %s the %s %s.\n", introduction(), verb(0), object(), prepPlace(0));
             break;
         case 4:
-            printf("%s %s the %s %s.\n", greeting(), verb(1), object(), prepPlace(0));
+            printf("I've seen a %s %s %s.\n", creature(), verbing(0), prepPlace(0));
             break;
         case 5:
             printf("♬..%s..♬\n", shanty());
@@ -73,6 +73,9 @@ void pattern() {
             break;
         case 10:
             printf("%s speaking, there be %ss %s.\n", adverb(1), creature(), prepPlace(0));
+            break;
+        case 11:
+            printf("%s Set sail for %s!", greeting(), prepPlace(0));
             break;
     }
 }
