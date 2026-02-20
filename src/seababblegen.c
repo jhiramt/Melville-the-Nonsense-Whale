@@ -67,7 +67,7 @@ void pattern() {
             break;
         case 5:
             {
-                printf("♬..%s..♬\n", shanty());
+                printf("♫..%s..♫\n", shanty());
             }
             break;
         case 6:
