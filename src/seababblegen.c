@@ -172,7 +172,7 @@ char * creature() {
 }
 
 char * verb(int cap) { // Root form of verbs
-    static char* verbs[] = {"plunder", "heave", "throw", "stow", "attack", "chase", "find", "harpoon", "maroon", "discover", "drown", "have", "brandish", "dance", "shuffle", "row"};
+    static char* verbs[] = {"plunder", "heave", "throw", "stow", "attack", "chase", "find", "harpoon", "maroon", "discover", "drown", "wrestle", "brandish", "dance", "shuffle", "row"};
     int numVerbs = sizeof(verbs) / sizeof(*verbs);
     char * word = verbs[rand() % numVerbs];
     if (cap == 1) {
