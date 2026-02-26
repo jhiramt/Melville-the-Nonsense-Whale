@@ -8,7 +8,7 @@ Ever wanted a talking whale at the top of your terminal? Me too.
 >[!IMPORTANT]
 >This requires a Unix-like environment with a POSIX-compatible shell (e.g., Bash or Zsh).
 
-Make sure you have a version of cowsay installed that has the cowthink wrapper[^1] (if you're using [Homebrew](https://brew.sh/), run `brew install cowsay`), and put [melville.cow](melville.cow) in your cowsay cowfile directory. You can see where cow files are located by running `cowsay -l`. Then, put the [seababble script](seababble) somewhere you can access. For example, I have it in `$HOME/scripts/Melville-the-Nonsense-Whale`. Finally, add the following two lines to your `.zshrc` or `.bashrc`, making sure `seababble_script` points to the correct path for wherever you put the [seababble script](seababble).
+Make sure you have a version of cowsay installed that has the cowthink wrapper[^1] (if you're using [Homebrew](https://brew.sh/), run `brew install cowsay`), and put [melville.cow](melville.cow) in your cowsay cowfile directory. You can see where cow files are located by running `cowsay -l`. Then, put the [seababble script](seababble) somewhere you can access. For example, I have it in `$HOME/scripts/Melville-the-Nonsense-Whale`. If [seababble](seababble) isn't placed on your path, make sure it's executable by running `chmod +x /path/to/seababble`. Finally, add the following two lines to your `.zshrc` or `.bashrc`, making sure `seababble_script` points to the correct path for wherever you put the [seababble script](seababble).
 ```
 seababble_script="$HOME/scripts/Melville-the-Nonsense-Whale/seababble"
 "$seababble_script" | cowthink -f melville -W 25 | sed -e 's/^~/~&/' -e 's/^[^~]/ &/'
@@ -19,4 +19,9 @@ The above command evaluates the seababble script to produce some nautical nonsen
 >[!NOTE]
 > This will run every time you open a new terminal session.
 
+### Compiling
+I compiled the included [seababble](seababble) binary on MacOS. For other systems and distributions, you'll want to compile [seababble.c](src/seababble.c) for yourself with
+```
+cc seababble.c -o seababble
+```
 [^1]: Technically, you could just use the `cowsay` command in place of `cowthink`, but my aesthetic preference is for `cowthink`.
