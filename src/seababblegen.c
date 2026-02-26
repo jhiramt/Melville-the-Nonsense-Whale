@@ -107,7 +107,7 @@ void pattern() {
         case 12:
             {
                 char * cap_prepPlace = prepPlace(1);
-                printf("%s not a soul can hear ye %s.", cap_prepPlace, verb(0));
+                printf("%s not a soul can hear ye %s.", cap_prepPlace, verbing(0));
                 free(cap_prepPlace);
             }
             break;
@@ -146,7 +146,7 @@ char * object() { // Normal size objects
 }
 
 char * prepPlace(int cap) { // Places preceded by an appropriate preposition
-    static char* prepPlaces[] = {"under the sea", "in the briny deep", "aboard the ship", "on the poopdeck", "atop the crow's nest", "on the wharf", "amidst the waves", "below deck", "in Davey Jones's locker", "off the coast", "off the coast of Spain", "in the galley", "in the Bermuda triangle", "in the clouds", "in the sea", "around the Northwest passage", "in the heart of the sea"};
+    static char* prepPlaces[] = {"under the sea", "in the briny deep", "aboard the ship", "on the poopdeck", "atop the crow's nest", "on the wharf", "amidst the waves", "below deck", "in Davey Jones's locker", "off the coast", "off the coast of Spain", "in the galley", "in the Bermuda triangle", "in the clouds", "in the sea", "around the Northwest passage", "in the heart o' the sea"};
     int numPrepPlaces = sizeof(prepPlaces) / sizeof(*prepPlaces);
     char * word = prepPlaces[rand() % numPrepPlaces];
     if (cap == 1) {
@@ -166,7 +166,7 @@ char * destPlace(int cap) { // Places formatted as destinations
 }
 
 char * creature() { 
-    static char* creatures[] = {"mermaid", "crab", "marlin", "whale", "squid", "siren", "leviathan", "tuna", "drowned man"};
+    static char* creatures[] = {"mermaid", "crab", "marlin", "whale", "squid", "siren", "leviathan", "tuna", "drowned man", "kraken", "barnacle", "clownfish", "deep one", "sea serpent"};
     int numCreatures = sizeof(creatures) / sizeof(*creatures);
     return creatures[rand() % numCreatures];
 }
