@@ -3,7 +3,7 @@
 ![Discovering a mermaid be a good way to lose yer rope.](images/Melville.31.22.png)
 
 # Melville the Nonsense Whale
-Ever wanted a talking whale at the top of your terminal? Me too.
+Ever wanted a talking whale at the top of your terminal? Me too!
 ## Installation
 >[!IMPORTANT]
 >This requires a Unix-like environment with a POSIX-compatible shell (e.g., Bash or Zsh).
