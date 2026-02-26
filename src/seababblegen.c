@@ -166,7 +166,7 @@ char * destPlace(int cap) { // Places formatted as destinations
 }
 
 char * creature() { 
-    static char* creatures[] = {"mermaid", "crab", "marlin", "whale", "squid", "siren", "leviathan", "tuna", "drowned man", "kraken", "barnacle", "clownfish", "deep one", "sea serpent"};
+    static char* creatures[] = {"mermaid", "crab", "marlin", "whale", "squid", "siren", "leviathan", "tuna", "drowned man", "kraken", "barnacle", "narwhal", "deep one", "sea serpent"};
     int numCreatures = sizeof(creatures) / sizeof(*creatures);
     return creatures[rand() % numCreatures];
 }
