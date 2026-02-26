@@ -19,7 +19,7 @@ The above command evaluates the seababble script to produce some nautical nonsen
 >[!NOTE]
 > This will run every time you open a new terminal session.
 
-### Compiling
+## Compiling
 I compiled the included [seababble](seababble) binary on MacOS. For other systems and distributions, you'll want to compile [seababble.c](src/seababble.c) for yourself with
 ```
 cc seababble.c -o seababble
