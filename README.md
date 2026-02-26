@@ -20,8 +20,8 @@ The above command evaluates the seababble script to produce some nautical nonsen
 > This will run every time you open a new terminal session.
 
 ## Compiling
-I compiled the included [seababble](seababble) binary on macOS. For other systems and distributions, you'll want to compile [seababble.c](/src/seababble.c) for yourself with
+I compiled the included [seababble](seababble) binary on macOS. For other systems and distributions, you'll want to compile [seababblegen.c](/src/seababblegen.c) for yourself with
 ```
-cc seababble.c -o seababble
+cc seababblegen.c -o seababble
 ```
 [^1]: Technically, you could just use the `cowsay` command in place of `cowthink`, but my aesthetic preference is for `cowthink`.
