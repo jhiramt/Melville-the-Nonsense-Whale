@@ -30,16 +30,19 @@ char * adverb(int);
 
 char * introduction();
 
+char * nonsense(int);
+
 void capitalize(char **);
 
-// Gets passed &word, the address of the word to capitalize
+// Expects the address of the read-only word to capitalize
+// The reason we don't just capitalize in place is that *word is currently pointing to read-only memory
 void capitalize(char ** word) {
-    char capword[101];
-    strcpy(capword, *word);
-    capword[0] = toupper(*word[0]);
-    char * outword = (char*) malloc((101)*sizeof(char)); //Freed in pattern method as needed
-    strcpy(outword, capword);
-    *word = outword;
+    if (word == NULL || *word == NULL || (*word)[0] == '\0')
+        return;
+
+    char *capword = strdup(*word); // Gets free()'d in pattern function as needed
+    capword[0] = (char)toupper((unsigned char)capword[0]);
+    *word = capword;
 }
 
 void pattern() {
@@ -83,7 +86,9 @@ void pattern() {
         case 8:
             {
                 char * cap_prepPlace = prepPlace(1);
-                printf("A %s? %s? Hornswaggle!\n", creature(), cap_prepPlace);
+                char * cap_nonsense = nonsense(1);
+                printf("A %s? %s? %s!\n", creature(), cap_prepPlace, cap_nonsense);
+                free(cap_nonsense);
                 free(cap_prepPlace);
             }
             break;
@@ -101,20 +106,20 @@ void pattern() {
             break;
         case 11:
             {
-                printf("%s Set sail for %s!", greeting(), destPlace(0));
+                printf("%s Set sail for %s!\n", greeting(), destPlace(0));
             }
             break;
         case 12:
             {
                 char * cap_prepPlace = prepPlace(1);
-                printf("%s not a soul can hear ye %s.", cap_prepPlace, verbing(0));
+                printf("%s not a soul can hear ye %s.\n", cap_prepPlace, verbing(0));
                 free(cap_prepPlace);
             }
             break;
         case 13:
             {
                 char * cap_verbing = verbing(1);
-                printf("%s a %s be a good way to lose yer %s.", cap_verbing, creature(), object());
+                printf("%s a %s be a good way to lose yer %s.\n", cap_verbing, creature(), object());
                 free(cap_verbing);
             }
             break;
@@ -216,6 +221,16 @@ char * shanty() {
     static char* shanties[] = {"Weigh, hey, and up she rises! Weigh hey, and up she rises", "what do we do with a drunken sailor, what do we do with a drunken sailor", "soon may the Wellerman come, to bring us sugar and tea and rum", "up jumps a crab with his crooked legs, saying 'you play the cribbage and I'll stick the pegs'", "the wind it blows from the east nor'east, our ship will scud ten knots at least", "we're homeward bound I hear them say, we're homeward bound with eleven months pay"};
     int numShanties = sizeof(shanties) / sizeof(*shanties);
     return shanties[rand() % numShanties];
+}
+
+char * nonsense(int cap) {
+    static char* nonsenses[] = {"hornswoggle", "blarney", "malarkey", "humbug"};
+    int numNonsenses = sizeof(nonsenses) / sizeof(*nonsenses);
+    char * word = nonsenses[rand() % numNonsenses];
+    if (cap == 1) {
+        capitalize(&word);
+    }
+    return word;
 }
 
 int main() {
